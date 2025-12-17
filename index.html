@@ -1,0 +1,97 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harshit Verma — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#">Harshit Verma</a>
+      <button class="nav-toggle" aria-label="Toggle navigation"></button>
+      <nav class="nav" id="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <img src="images/avatar.svg" alt="Harshit avatar" class="avatar">
+        <div>
+          <h1>Harshit Verma</h1>
+          <p class="lead">Software Developer • Open-source enthusiast • Problem solver</p>
+          <p class="cta-row"><a class="btn" href="#contact">Get in touch</a>
+          <a class="btn ghost" href="#projects">See projects</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>About</h2>
+      <p>I build web applications and tools that solve real problems. I enjoy working across the stack, learning new technologies, and contributing to open-source.</p>
+    </section>
+
+    <section id="projects" class="container projects">
+      <h2>Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="images/avatar.svg" alt="project placeholder">
+          <h3>Project One</h3>
+          <p>A short description of project one — tech used, impact, and link.</p>
+          <p><a href="#">View</a></p>
+        </article>
+
+        <article class="card">
+          <img src="images/avatar.svg" alt="project placeholder">
+          <h3>Project Two</h3>
+          <p>A short description of project two — tech used, impact, and link.</p>
+          <p><a href="#">View</a></p>
+        </article>
+
+        <article class="card">
+          <img src="images/avatar.svg" alt="project placeholder">
+          <h3>Project Three</h3>
+          <p>A short description of project three — tech used, impact, and link.</p>
+          <p><a href="#">View</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="container skills">
+      <h2>Skills</h2>
+      <ul class="skill-list">
+        <li>JavaScript / TypeScript</li>
+        <li>React / Next.js</li>
+        <li>Node.js / Express</li>
+        <li>Python</li>
+        <li>Docker / AWS</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Contact</h2>
+      <form id="contactForm">
+        <label>Name <input type="text" name="name" required></label>
+        <label>Email <input type="email" name="email" required></label>
+        <label>Message <textarea name="message" rows="5" required></textarea></label>
+        <div class="form-row"><button type="submit" class="btn">Send</button>
+        <button type="button" id="resetBtn" class="btn ghost">Reset</button></div>
+      </form>
+      <p class="muted">Or email me directly at <a href="mailto:harshit4verma2005@gmail.com.com">harshit4verma2005@gmail.com.com</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> Harshit Verma — Built with HTML/CSS/JS</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
