@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshit Verma | Cloud Computing & Systems Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FAF9F5;
+      --bg-surface: #FFFFFF;
+      --sage-50: #F4F7F4;
+      --sage-100: #E3EBE3;
+      --sage-300: #A8BFA8;
+      --sage-600: #517151;
+      --sage-800: #2C422C;
+      --moss-deep: #1F3020;
+      --sand-gold: #D6A463;
+      --earth-border: rgba(81, 113, 81, 0.15);
+      --text-main: #202620;
+      --text-muted: #5A695A;
+      --shadow-sm: 0 4px 16px rgba(44, 66, 44, 0.05);
+      --shadow-md: 0 12px 36px rgba(44, 66, 44, 0.08);
+      --shadow-lg: 0 20px 48px rgba(44, 66, 44, 0.12);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 12% 18%, rgba(81, 113, 81, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 88% 75%, rgba(214, 164, 99, 0.04) 0%, transparent 45%);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    /* Botanical header nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(250, 249, 245, 0.88);
+      border-bottom: 1px solid var(--earth-border);
+    }
+
+    .nav-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--moss-deep);
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-leaf {
+      width: 28px;
+      height: 28px;
+      background: var(--sage-100);
+      border-radius: 50% 12% 50% 12%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sage-600);
+      font-size: 0.95rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--sage-600);
+    }
+
+    .btn-connect {
+      padding: 0.55rem 1.25rem;
+      background: var(--sage-800);
+      color: #FFF !important;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(44, 66, 44, 0.18);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .btn-connect:hover {
+      background: var(--moss-deep);
+      transform: translateY(-2px);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: center;
+      padding: 2.5rem 0 4.5rem;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.95rem;
+      background: var(--sage-100);
+      border: 1px solid var(--earth-border);
+      border-radius: 999px;
+      color: var(--sage-800);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-tag::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--sage-600);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.4rem;
+      line-height: 1.12;
+      color: var(--moss-deep);
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 0.85rem 1.75rem;
+      background: var(--sage-800);
+      color: #FFF;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 999px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary:hover {
+      background: var(--moss-deep);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      padding: 0.85rem 1.75rem;
+      background: var(--bg-surface);
+      color: var(--sage-800);
+      border: 1px solid var(--earth-border);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 999px;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-secondary:hover {
+      background: var(--sage-50);
+      border-color: var(--sage-300);
+      transform: translateY(-2px);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-frame {
+      width: 320px;
+      height: 380px;
+      border-radius: 40px 14px 40px 14px;
+      overflow: hidden;
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      background: var(--sage-100);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .floating-badge {
+      position: absolute;
+      bottom: -15px;
+      left: -15px;
+      background: #FFFFFF;
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--earth-border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .badge-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--sage-50);
+      color: var(--sage-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .badge-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .badge-val {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--moss-deep);
+    }
+
+    /* Section Headers */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--moss-deep);
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+      max-width: 620px;
+    }
+
+    /* Education Cards */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--earth-border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--sage-300);
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--sage-600);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      color: var(--moss-deep);
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+
+    .card .institution {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card .score-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.85rem;
+      background: var(--sage-50);
+      border: 1px solid var(--earth-border);
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--sage-800);
+    }
+
+    /* Skills Grid */
+    .skills-section {
+      margin-bottom: 4.5rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--earth-border);
+      border-radius: var(--radius-sm);
+      padding: 1.35rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+    }
+
+    .skill-box:hover {
+      border-color: var(--sage-300);
+      transform: translateY(-2px);
+      background: var(--sage-50);
+    }
+
+    .skill-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--sage-600);
+    }
+
+    .skill-title {
+      font-weight: 600;
+      color: var(--moss-deep);
+      font-size: 1rem;
+    }
+
+    /* Experience & Leadership */
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .exp-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--earth-border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s;
+    }
+
+    .exp-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .exp-role {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--moss-deep);
+      margin-bottom: 0.35rem;
+    }
+
+    .exp-org {
+      font-size: 0.88rem;
+      color: var(--sage-600);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+
+    .exp-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Contact Footer */
+    footer {
+      background: var(--moss-deep);
+      color: #E2E8E2;
+      padding: 4rem 1.5rem 3rem;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    .footer-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .footer-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: #FFF;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-sub {
+      color: #A3B5A3;
+      font-size: 1rem;
+      max-width: 480px;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      color: #E2E8E2;
+      text-decoration: none;
+      font-size: 0.98rem;
+      transition: color 0.2s;
+    }
+
+    .contact-item:hover {
+      color: #A8D5A8;
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .copyright {
+      max-width: 1140px;
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.85rem;
+      color: #8C9F8C;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+      }
+      .hero-subtitle {
+        margin: 0 auto 2rem;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .floating-badge {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -20px;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <span class="brand-leaf">🍃</span>
+        <span>Harshit Verma</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#leadership">Highlights</a></li>
+          <li><a href="#contact" class="btn-connect">Get in Touch</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+      <div>
+        <div class="hero-tag">Cloud Computing & Systems • 2nd Year</div>
+        <h1>Cultivating reliable cloud systems and clean logic.</h1>
+        <p class="hero-subtitle">
+          Undergraduate student at Techno India University focused on Cloud Infrastructure, C Programming, and Python architecture. Committed to building resilient, performant digital solutions with natural simplicity.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Connect Directly</a>
+          <a href="https://linkedin.com/in/harshit4verma2005/" target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn Profile ↗</a>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="photo-frame">
+          <img src="profile.png" alt="Harshit Verma">
+        </div>
+        <div class="floating-badge">
+          <div class="badge-icon">🌿</div>
+          <div>
+            <div class="badge-label">1st Year CGPA</div>
+            <div class="badge-val">7.05</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+      <h2 class="section-title">Academic Pathway</h2>
+      <p class="section-desc">Structured foundation across cloud computing, computer science principles, and analytical coursework.</p>
+
+      <div class="edu-grid">
+        <div class="card">
+          <div class="card-tag">Undergraduate • Current</div>
+          <h3>B.Tech CSE (Cloud Computing)</h3>
+          <div class="institution">Techno India University</div>
+          <div class="score-pill">
+            <span>🌱</span> 1st Year CGPA: 7.05 (Currently in 2nd Year)
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">Senior Secondary (XII)</div>
+          <h3>Standard XII</h3>
+          <div class="institution">Open Schooling</div>
+          <div class="score-pill">
+            <span>📊</span> Aggregate: 74%
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">Secondary (X)</div>
+          <h3>Standard X</h3>
+          <div class="institution">Narayana School (CBSE)</div>
+          <div class="score-pill">
+            <span>📘</span> Aggregate: 60%
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+      <h2 class="section-title">Core Competencies</h2>
+      <p class="section-desc">Technical skill set and operational tools developed through rigorous coursework and hands-on practice.</p>
+
+      <div class="skills-grid">
+        <div class="skill-box">
+          <div class="skill-dot"></div>
+          <div class="skill-title">C Programming</div>
+        </div>
+        <div class="skill-box">
+          <div class="skill-dot"></div>
+          <div class="skill-title">Python</div>
+        </div>
+        <div class="skill-box">
+          <div class="skill-dot"></div>
+          <div class="skill-title">HTML (Semantic Web)</div>
+        </div>
+        <div class="skill-box">
+          <div class="skill-dot"></div>
+          <div class="skill-title">Cloud Fundamentals</div>
+        </div>
+        <div class="skill-box">
+          <div class="skill-dot"></div>
+          <div class="skill-title">MS Excel</div>
+        </div>
+        <div class="skill-box">
+          <div class="skill-dot"></div>
+          <div class="skill-title">MS PowerPoint</div>
+        </div>
+        <div class="skill-box">
+          <div class="skill-dot"></div>
+          <div class="skill-title">Writing & Communication</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership & Experience -->
+    <section id="leadership">
+      <h2 class="section-title">Highlights & Leadership</h2>
+      <p class="section-desc">Key initiatives, ambassador responsibilities, and technical collaborative projects.</p>
+
+      <div class="exp-grid">
+        <div class="exp-card">
+          <div class="exp-org">Leadership & Community</div>
+          <div class="exp-role">IIT Delhi Student Ambassador</div>
+          <p class="exp-desc">
+            Represented student initiatives and facilitated outreach, technology workshops, and peer community engagement in collaboration with IIT Delhi programs.
+          </p>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-org">Emergency Systems AI</div>
+          <div class="exp-role">SafeTransit AI</div>
+          <p class="exp-desc">
+            Architected conceptual frameworks for real-time safety alert mechanisms and responsive transit monitoring protocols.
+          </p>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-org">Immersive Technology</div>
+          <div class="exp-role">STEAM VARSITY VR Workshop</div>
+          <p class="exp-desc">
+            Collaborated within Team Kedarnath exploring 3D interactive mechanics, low-latency performance optimization, and virtual environments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer / Contact -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <div>
+        <h2 class="footer-heading">Let's build reliable systems together.</h2>
+        <p class="footer-sub">
+          Open to cloud engineering internships, collaborative development projects, and technical workshops.
+        </p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:harshit4verma2005@gmail.com" class="contact-item">
+          <div class="contact-icon">✉</div>
+          <span>harshit4verma2005@gmail.com</span>
+        </a>
+        <a href="tel:9123620283" class="contact-item">
+          <div class="contact-icon">📞</div>
+          <span>+91 9123620283</span>
+        </a>
+        <a href="https://linkedin.com/in/harshit4verma2005/" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <div class="contact-icon">🔗</div>
+          <span>linkedin.com/in/harshit4verma2005/</span>
+        </a>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <span>Greenfield City, Behala, Kolkata-700141</span>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <div>© 2026 Harshit Verma. All rights reserved.</div>
+      <div>Crafted with natural aesthetic • B.Tech CSE (Cloud Computing)</div>
+    </div>
+  </footer>
+
+</body>
+</html>
